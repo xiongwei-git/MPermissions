@@ -1,5 +1,5 @@
 apply plugin: 'java'
-apply plugin: 'bintray-release'
+//apply plugin: 'bintray-release'
 sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
 dependencies {
@@ -8,14 +8,14 @@ dependencies {
     compile 'com.squareup:javapoet:1.0.0'
 }
 
-publish {
-    artifactId = 'mpermission-compiler'
-    userOrg = rootProject.userOrg
-    groupId = rootProject.groupId
-    uploadName = rootProject.uploadName
-    publishVersion = rootProject.publishVersion
-    description = rootProject.description
-    website = rootProject.website
-    licences = rootProject.licences
-}
+//publish {
+//    artifactId = 'mpermission-compiler'
+//    userOrg = rootProject.userOrg
+//    groupId = rootProject.groupId
+//    uploadName = rootProject.uploadName
+//    publishVersion = rootProject.publishVersion
+//    description = rootProject.description
+//    website = rootProject.website
+//    licences = rootProject.licences
+//}
 

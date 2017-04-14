@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity
 {
 
     private Button mBtnSdcard, mBtnCallPhone;
-    private static final int REQUECT_CODE_SDCARD = 2;
-    private static final int REQUECT_CODE_CALL_PHONE = 3;
+    private static final int REQUEST_CODE_SDCARD = 2;
+    private static final int REQUEST_CODE_CALL_PHONE = 3;
 
 
     @Override
@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
 
-                if (!MPermissions.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE, REQUECT_CODE_SDCARD))
+                if (!MPermissions.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE, REQUEST_CODE_SDCARD))
                 {
-                    MPermissions.requestPermissions(MainActivity.this, REQUECT_CODE_SDCARD, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    MPermissions.requestPermissions(MainActivity.this, REQUEST_CODE_SDCARD, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 }
             }
         });
@@ -47,16 +47,16 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                MPermissions.requestPermissions(MainActivity.this, REQUECT_CODE_CALL_PHONE, Manifest.permission.CALL_PHONE);
+                MPermissions.requestPermissions(MainActivity.this, REQUEST_CODE_CALL_PHONE, Manifest.permission.CALL_PHONE);
             }
         });
     }
 
-    @ShowRequestPermissionRationale(REQUECT_CODE_SDCARD)
+    @ShowRequestPermissionRationale(REQUEST_CODE_SDCARD)
     public void whyNeedSdCard()
     {
         Toast.makeText(this, "I need write news to sdcard!", Toast.LENGTH_SHORT).show();
-        MPermissions.requestPermissions(MainActivity.this, REQUECT_CODE_SDCARD, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        MPermissions.requestPermissions(MainActivity.this, REQUEST_CODE_SDCARD, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 
     }
 
@@ -69,26 +69,26 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    @PermissionGrant(REQUECT_CODE_SDCARD)
+    @PermissionGrant(REQUEST_CODE_SDCARD)
     public void requestSdcardSuccess()
     {
         Toast.makeText(this, "GRANT ACCESS SDCARD!", Toast.LENGTH_SHORT).show();
     }
 
-    @PermissionDenied(REQUECT_CODE_SDCARD)
+    @PermissionDenied(REQUEST_CODE_SDCARD)
     public void requestSdcardFailed()
     {
         Toast.makeText(this, "DENY ACCESS SDCARD!", Toast.LENGTH_SHORT).show();
     }
 
 
-    @PermissionGrant(REQUECT_CODE_CALL_PHONE)
+    @PermissionGrant(REQUEST_CODE_CALL_PHONE)
     public void requestCallPhoneSuccess()
     {
         Toast.makeText(this, "GRANT ACCESS SDCARD!", Toast.LENGTH_SHORT).show();
     }
 
-    @PermissionDenied(REQUECT_CODE_CALL_PHONE)
+    @PermissionDenied(REQUEST_CODE_CALL_PHONE)
     public void requestCallPhoneFailed()
     {
         Toast.makeText(this, "DENY ACCESS SDCARD!", Toast.LENGTH_SHORT).show();
